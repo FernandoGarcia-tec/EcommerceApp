@@ -1,7 +1,7 @@
 import React from "react";
-import {NativeStackScreenProps,createNativeStackNavigator} from "@react-navigation/native-stack"
+import { NativeStackScreenProps, createNativeStackNavigator } from "@react-navigation/native-stack"
 import { NavigatorScreenParams } from "@react-navigation/native";
-import { TabsStackParamObj } from "./TabNavigator";
+import TabsNavigator, { TabsStackParamObj } from "./TabNavigator";
 
 
 
@@ -30,3 +30,15 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 // Se utiliza el tipo NativeStackScreenProps para definir las propiedades que se pasan a las pantallas del stack de navegación raíz
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> = NativeStackScreenProps<RootStackParamList, T>;
+
+const RootNavigator = () => {
+    return (
+        // RootStack.Navigator configura el stack de navegación raíz.
+        // RootStack.Screen define las pantallas que se utilizan en el stack de navegación raíz.
+        <RootStack.Navigator>
+            <RootStack.Screen name="TabsStack" component={TabsNavigator} options={{ headerShown: false }} />
+        </RootStack.Navigator>
+    );
+}
+export default RootNavigator;
+// Este código define un stack de navegación raíz para una aplicación React Native utilizando React Navigation.
