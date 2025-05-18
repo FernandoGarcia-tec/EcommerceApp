@@ -16,6 +16,7 @@ export const HeaderComponent = ({ goToPrevios, search, cartlenght, goToCartScree
     return (
         // Este componente es un encabezado que contiene un campo de búsqueda 
         <View style={{ backgroundColor: "#000", padding: 10, flexDirection: "row", alignItems: "center" }}>
+            {/* Icono de retroceso de la carpeta de componentes, GoBackNavButton = GoBack */}
             <GoBack onPress={goToPrevios}/>
             {/* campo de busqueda */}
             <Pressable style={{ flexDirection: "row", alignItems: "center", marginHorizontal: 7, gap: 10, backgroundColor: "white", borderRadius: 10, height: 38, flex: 1 }}>
