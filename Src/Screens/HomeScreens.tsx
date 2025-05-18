@@ -1,11 +1,14 @@
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import react from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, Platform } from "react-native";
+import { TabStackScreenProps } from "../Navigations/TabNavigator";
+import { HeaderComponent } from "../Components/HeaderComponent";
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation,route}:TabStackScreenProps<"Home">) => {
     return (
-        <View>
-            <Text style={{ fontSize: 30, marginTop:50 }}>Ecommerce Home Screen</Text>
-        </View>
+        <SafeAreaView style={{ padding: Platform.OS === "android" ? 40 : 0, flex: 1, backgroundColor: "#000" }}>
+            <HeaderComponent />
+        </SafeAreaView>
     )
 }
 export default HomeScreen;
