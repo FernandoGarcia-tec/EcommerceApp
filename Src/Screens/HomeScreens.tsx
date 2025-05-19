@@ -21,10 +21,13 @@ const HomeScreen = ({ navigation, route }: TabStackScreenProps<"Home">) => {
 
         <SafeAreaView style={{ paddingTop: Platform.OS === "android" ? 40 : 0, flex: 1, backgroundColor: "#000" }}>
             <HeaderComponent goToCartScreen={gotoCartScreen} />
-        <ScrollView style={{ backgroundColor: "#eee" }}>
+            {/* El componente HeaderComponent se utiliza para mostrar el encabezado de la pantalla */}
+            {/* Se pasa la función gotoCartScreen como prop para que el encabezado pueda navegar a la pantalla del carrito */}
+        <ScrollView showsHorizontalScrollIndicator={false} style={{ backgroundColor: "#eee" }}>
+            {/* ImageSlider del archivo, saca el desplazamiento, las imagenes estan arriba */}
             <ImageSlider images={sliderImages} />
             <View style={{ backgroundColor: "#eee", borderWidth: 3, borderColor: "#fff", marginTop: 5 }} />
-            <Text style={{ fontSize: 25, marginHorizontal: 5, marginTop: 10 }}>Nueva Categoria </Text>
+            <Text style={{ fontSize: 25, marginHorizontal: 5 }}>Nueva Categoria </Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {/* Aquí puedes agregar los elementos de la nueva categoría */}
             </ScrollView>
